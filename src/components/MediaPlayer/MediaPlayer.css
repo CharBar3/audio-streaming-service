@@ -1,0 +1,55 @@
+.media-player {
+  height: 64px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.media-player-song-info {
+  height: 60%;
+  width: 20%;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+.media-player-song-info img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.media-player-song-title-artist-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.media-player-controls {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.media-player-back-play-forward {
+  width: 12%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.media-player-time-slider {
+  width: 76%;
+
+  display: flex;
+  justify-content: center;
+}
+.media-player-time-slider input {
+  width: 90%;
+}
+
+.media-player-volume {
+  width: 12%;
+  display: flex;
+  justify-content: center;
+}
