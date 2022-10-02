@@ -1,12 +1,41 @@
 import "./MediaPlayer.css";
 import PauseIcon from "./icons/pause.svg";
 import PlayIcon from "./icons/play.svg";
-import VolumeIcon from "./icons/volume.svg";
+// import VolumeIcon from "./icons/volume.svg";
 import VolumeMaxIcon from "./icons/volume-2.svg";
 import SkipBackIcon from "./icons/skip-back.svg";
 import SkipForwardIcon from "./icons/skip-forward.svg";
 
-const MediaPlayer = ({ artistPicture, songTitle, artistName }) => {
+import { useState, useEffect } from "react";
+
+const MediaPlayer = ({ artistPicture, songTitle, artistName, song }) => {
+  const [playStateStyle, setPlayStateStyle] = useState({
+    playButtonDisplay: "block",
+    pauseButtonDisplay: "none",
+  });
+
+  const playAudio = () => {
+    song.play();
+    setPlayStateStyle({
+      playButtonDisplay: "none",
+      pauseButtonDisplay: "block",
+    });
+  };
+  const pauseAudio = () => {
+    song.pause();
+    setPlayStateStyle({
+      playButtonDisplay: "block",
+      pauseButtonDisplay: "none",
+    });
+  };
+
+  useEffect(() => {
+    console.log(song.currentTime);
+    return () => {
+      console.log(song.currentTime);
+    };
+  }, [song.currentTime]);
+
   return (
     <div className="media-player">
       <div className="media-player-song-info">
@@ -19,7 +48,18 @@ const MediaPlayer = ({ artistPicture, songTitle, artistName }) => {
       <div className="media-player-controls">
         <div className="media-player-back-play-forward">
           <img src={SkipBackIcon} alt="skip-back-icon" />
-          <img src={PlayIcon} alt="-icon" />
+          <img
+            src={PlayIcon}
+            alt="play-icon"
+            style={{ display: playStateStyle.playButtonDisplay }}
+            onClick={() => playAudio()}
+          />
+          <img
+            src={PauseIcon}
+            alt="pause-icon"
+            style={{ display: playStateStyle.pauseButtonDisplay }}
+            onClick={() => pauseAudio()}
+          />
           <img src={SkipForwardIcon} alt="skip-forward-icon" />
         </div>
         <div className="media-player-time-slider">
