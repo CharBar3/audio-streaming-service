@@ -4,7 +4,7 @@ import MediaPlayer from "./components/MediaPlayer/MediaPlayer";
 import mp3 from "./audio/falling-for-you.mp3";
 
 function App() {
-  // const song = new Audio(mp3);
+  const song = new Audio(mp3);
   return (
     <div className="App">
       <MediaPlayer
@@ -12,7 +12,7 @@ function App() {
         artistName="SouMix & Bromer"
         songTitle="Falling For You"
         // audio={Audio}
-        song={new Audio(mp3)}
+        song={song}
       />
     </div>
   );

@@ -6,13 +6,15 @@ import VolumeMaxIcon from "./icons/volume-2.svg";
 import SkipBackIcon from "./icons/skip-back.svg";
 import SkipForwardIcon from "./icons/skip-forward.svg";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const MediaPlayer = ({ artistPicture, songTitle, artistName, song }) => {
   const [playStateStyle, setPlayStateStyle] = useState({
     playButtonDisplay: "block",
     pauseButtonDisplay: "none",
   });
+
+  const [sliderState, setSliderState] = useState(0);
 
   const playAudio = () => {
     song.play();
@@ -29,12 +31,9 @@ const MediaPlayer = ({ artistPicture, songTitle, artistName, song }) => {
     });
   };
 
-  useEffect(() => {
-    console.log(song.currentTime);
-    return () => {
-      console.log(song.currentTime);
-    };
-  }, [song.currentTime]);
+  song.ontimeupdate = (e) => {
+    setSliderState(song.currentTime);
+  };
 
   return (
     <div className="media-player">
@@ -63,7 +62,13 @@ const MediaPlayer = ({ artistPicture, songTitle, artistName, song }) => {
           <img src={SkipForwardIcon} alt="skip-forward-icon" />
         </div>
         <div className="media-player-time-slider">
-          <input type="range" />
+          <input
+            type="range"
+            min="0"
+            max={song.duration}
+            value={sliderState}
+            step="0.001"
+          />
         </div>
         <div className="media-player-volume">
           <img src={VolumeMaxIcon} alt="Volume Icon" />
