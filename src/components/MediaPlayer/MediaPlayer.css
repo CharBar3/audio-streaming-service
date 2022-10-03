@@ -2,8 +2,17 @@
   height: 64px;
   width: 100%;
 
+  color: white;
+
   display: flex;
   align-items: center;
+}
+
+.media-player a {
+  all: unset;
+}
+.media-player svg {
+  color: white;
 }
 
 .media-player-song-info {

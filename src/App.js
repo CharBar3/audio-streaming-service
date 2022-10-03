@@ -5,6 +5,7 @@ import mp3 from "./audio/falling-for-you.mp3";
 
 function App() {
   const song = new Audio(mp3);
+
   return (
     <div className="App">
       <MediaPlayer
