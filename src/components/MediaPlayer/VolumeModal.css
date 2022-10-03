@@ -1,0 +1,17 @@
+.volume-modal {
+  position: absolute;
+  bottom: 64px;
+  right: 0px;
+
+  height: 175px;
+  width: 66px;
+  /* border: 2px solid white; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.volume-modal input {
+  -webkit-appearance: slider-vertical;
+  width: 10px;
+}

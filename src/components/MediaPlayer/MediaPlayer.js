@@ -1,12 +1,7 @@
 import "./MediaPlayer.css";
-import PauseIcon from "./icons/pause.svg";
-import PlayIcon from "./icons/play.svg";
-// import VolumeIcon from "./icons/volume.svg";
-import VolumeMaxIcon from "./icons/volume-2.svg";
-import SkipBackIcon from "./icons/skip-back.svg";
-import SkipForwardIcon from "./icons/skip-forward.svg";
 
 import { useState } from "react";
+import VolumeModal from "./VolumeModal";
 
 const MediaPlayer = ({ artistPicture, songTitle, artistName, song }) => {
   const [playStateStyle, setPlayStateStyle] = useState({
@@ -52,6 +47,18 @@ const MediaPlayer = ({ artistPicture, songTitle, artistName, song }) => {
         playButtonDisplay: "block",
         pauseButtonDisplay: "none",
       });
+    }
+  };
+
+  const [volumeModalStatus, setVolumeModalStatus] = useState({
+    display: "none",
+  });
+
+  const openVolumeChangeModal = () => {
+    if (volumeModalStatus.display === "none") {
+      setVolumeModalStatus({ display: "flex" });
+    } else {
+      setVolumeModalStatus({ display: "none" });
     }
   };
 
@@ -143,6 +150,7 @@ const MediaPlayer = ({ artistPicture, songTitle, artistName, song }) => {
         </div>
         <div className="media-player-volume">
           <svg
+            onClick={() => openVolumeChangeModal()}
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -159,6 +167,7 @@ const MediaPlayer = ({ artistPicture, songTitle, artistName, song }) => {
           </svg>
         </div>
       </div>
+      <VolumeModal song={song} style={volumeModalStatus} />
     </div>
   );
 };

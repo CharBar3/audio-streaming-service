@@ -1,6 +1,7 @@
 .media-player {
   height: 64px;
   width: 100%;
+  border-top: 1px solid white;
 
   color: white;
 
@@ -9,7 +10,8 @@
 }
 
 .media-player a {
-  all: unset;
+  text-decoration: none;
+  color: white;
 }
 .media-player svg {
   color: white;
@@ -38,27 +40,33 @@
   height: 40%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .media-player-back-play-forward {
-  width: 12%;
-
+  width: 90px;
   display: flex;
   justify-content: space-between;
 }
 
 .media-player-time-slider {
-  width: 76%;
-
+  width: 75%;
   display: flex;
   justify-content: center;
 }
 .media-player-time-slider input {
-  width: 90%;
+  width: 100%;
+  height: 2px;
 }
+/* .media-player-time-slider input::-webkit-slider-thumb {
+  background-color: red;
+}
+.media-player-time-slider input::-webkit-slider-runnable-track {
+  color: white;
+} */
 
 .media-player-volume {
-  width: 12%;
+  width: 64px;
   display: flex;
   justify-content: center;
 }
