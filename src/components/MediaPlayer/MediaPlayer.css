@@ -1,4 +1,9 @@
 .media-player {
+  position: absolute;
+  bottom: 0;
+
+  background-color: var(--main-background-color);
+
   height: 64px;
   width: 100%;
   border-top: 1px solid white;

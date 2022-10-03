@@ -1,5 +1,6 @@
 .App {
-  display: flex;
-  align-items: flex-end;
   height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 }
