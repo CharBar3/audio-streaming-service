@@ -48,6 +48,12 @@ const MediaPlayer = ({ artistPicture, songTitle, artistName, song }) => {
     if (sliderClickedStatus === false) {
       setSliderState(song.currentTime);
     }
+    if (song.currentTime === song.duration) {
+      setPlayStateStyle({
+        playButtonDisplay: "block",
+        pauseButtonDisplay: "none",
+      });
+    }
   };
 
   return (
