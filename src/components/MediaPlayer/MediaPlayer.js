@@ -31,8 +31,23 @@ const MediaPlayer = ({ artistPicture, songTitle, artistName, song }) => {
     });
   };
 
+  const [sliderClickedStatus, setSliderClickedStatus] = useState(false);
+
+  const handleSliderPress = (e) => {
+    setSliderClickedStatus(true);
+    setSliderState();
+  };
+
+  const handleSliderRelease = (e) => {
+    console.log(e.target.value);
+    song.currentTime = e.target.value;
+    setSliderClickedStatus(false);
+  };
+
   song.ontimeupdate = (e) => {
-    setSliderState(song.currentTime);
+    if (sliderClickedStatus === false) {
+      setSliderState(song.currentTime);
+    }
   };
 
   return (
@@ -68,6 +83,8 @@ const MediaPlayer = ({ artistPicture, songTitle, artistName, song }) => {
             max={song.duration}
             value={sliderState}
             step="0.001"
+            onMouseDown={(e) => handleSliderPress(e)}
+            onMouseUp={(e) => handleSliderRelease(e)}
           />
         </div>
         <div className="media-player-volume">
