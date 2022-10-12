@@ -14,10 +14,16 @@ function App() {
 
   return (
     <div className="App">
-      <MobileOpenNavButton mobileNavMenuState={mobileNavMenuState} />
+      <MobileOpenNavButton
+        mobileNavMenuState={mobileNavMenuState}
+        setMobileNavMenuState={setMobileNavMenuState}
+      />
       <div>
         {" "}
-        <LeftNav mobileNavMenuState={mobileNavMenuState} />{" "}
+        <LeftNav
+          mobileNavMenuState={mobileNavMenuState}
+          setMobileNavMenuState={setMobileNavMenuState}
+        />{" "}
       </div>
       <MediaPlayer
         artistPicture="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"

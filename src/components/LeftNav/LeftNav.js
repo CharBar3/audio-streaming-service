@@ -10,12 +10,18 @@ import { ReactComponent as RadioIcon } from "../Icons/radio.svg";
 import { ReactComponent as HeartIcon } from "../Icons/heart.svg";
 import { ReactComponent as SearchIcon } from "../Icons/search.svg";
 
-const LeftNav = ({ mobileNavMenuState }) => {
-  const handleResize = (e) => {
-    console.log(e);
+const LeftNav = () => {
+  const handleResize = () => {
+    const navMenu = document.querySelector(".left-nav");
+
+    if (window.innerWidth >= 600) {
+      navMenu.style.display = "flex";
+    } else {
+      navMenu.style.display = "none";
+    }
   };
 
-  // document.addEventListener("resize", (e) => handleResize(e));
+  window.addEventListener("resize", handleResize);
 
   const library = [
     {
