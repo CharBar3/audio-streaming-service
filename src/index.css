@@ -18,4 +18,15 @@ code {
   --song-title-font-size: 10pt;
   --song-title-font-weight: 500;
   --main-background-color: rgb(24, 24, 33);
+
+  /* Mobile Font Size */
+}
+
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 900px) {
+}
+@media only screen and (max-width: 1200px) {
+}
+@media only screen and (max-width: 1536px) {
 }
