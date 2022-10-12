@@ -8,6 +8,10 @@ body {
   background-color: var(--main-background-color);
 }
 
+body svg {
+  color: white;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -18,4 +22,20 @@ code {
   --song-title-font-size: 10pt;
   --song-title-font-weight: 500;
   --main-background-color: rgb(24, 24, 33);
+
+  /* Mobile Font Size */
+
+  /* Circle Button */
+  --selected-background-color: grey;
+  --un-selected-background-color: none;
+  --action-background-color: rgb(255, 37, 74);
+}
+
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 900px) {
+}
+@media only screen and (max-width: 1200px) {
+}
+@media only screen and (max-width: 1536px) {
 }

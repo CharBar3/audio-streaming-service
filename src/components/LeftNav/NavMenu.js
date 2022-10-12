@@ -1,9 +1,9 @@
 import "./NavMenu.css";
 
 const NavMenu = ({ title, menuItems }) => {
-  const mappedMneuItems = menuItems.map(({ name, href, svg }) => {
+  const mappedMneuItems = menuItems.map(({ name, href, svg }, index) => {
     return (
-      <a href={href}>
+      <a href={href} key={index}>
         <div className="nav-menu-mapped-menu-item">
           <div className="nav-menu-svg">{svg}</div>
           <div className="nav-menu-name">
