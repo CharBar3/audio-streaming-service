@@ -3,12 +3,14 @@ import MediaPlayer from "./components/MediaPlayer/MediaPlayer";
 // import SeedData from "./seedData";
 import mp3 from "./audio/falling-for-you.mp3";
 import LeftNav from "./components/LeftNav/LeftNav";
+import MobileOpenNavButton from "./components/LeftNav/MobileOpenNavButton";
 
 function App() {
   const song = new Audio(mp3);
 
   return (
     <div className="App">
+      <MobileOpenNavButton />
       <div>
         <LeftNav />
       </div>

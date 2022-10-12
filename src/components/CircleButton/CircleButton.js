@@ -1,6 +1,9 @@
-const MobileOpenNav = () => {
+import "./CircleButton.css";
+
+const CircleButton = ({ icon }) => {
   return (
-    <>
+    <div className="circle-button">
+      {icon}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -17,8 +20,8 @@ const MobileOpenNav = () => {
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="18" x2="21" y2="18"></line>
       </svg>
-    </>
+    </div>
   );
 };
 
-export default MobileOpenNav;
+export default CircleButton;
